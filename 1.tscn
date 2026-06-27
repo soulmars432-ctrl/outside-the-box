@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b73v30kl6rtw" path="res://goal.tscn" id="7_sj4ut"]
 [ext_resource type="Texture2D" uid="uid://co32bbxg16rgu" path="res://assets/icons/sprite_1.png" id="8_e348n"]
 [ext_resource type="PackedScene" uid="uid://baumb8vvdtlp0" path="res://restart.tscn" id="9_cckd2"]
+[ext_resource type="AudioStream" uid="uid://cfvj2sjmdjwim" path="res://assets/rotate sound.wav" id="10_x8dme"]
+[ext_resource type="AudioStream" uid="uid://bhr0d8pl57uji" path="res://assets/reset_sound.wav" id="11_5eqyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sj4ut"]
 texture = ExtResource("4_sj4ut")
@@ -97,3 +99,9 @@ offset_left = 1041.0
 offset_top = 32.000015
 offset_right = 1065.0
 offset_bottom = 56.000015
+
+[node name="creeking_sound" type="AudioStreamPlayer" parent="." unique_id=753196943]
+stream = ExtResource("10_x8dme")
+
+[node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=1799586877]
+stream = ExtResource("11_5eqyn")

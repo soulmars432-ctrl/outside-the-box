@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b7k41htl2cijr" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c3dji47ivdvni" path="res://assets/New Piskel (2).png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://civhntbae2eg8" path="res://whoosh.mp3" id="3_i3pqv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
-size = Vector2(62, 62.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 31.06
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4flbx"]
 animations = [{
@@ -25,9 +26,12 @@ floor_snap_length = 0.0
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=397046586]
-shape = SubResource("RectangleShape2D_4flbx")
+shape = SubResource("CircleShape2D_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468780790]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_4flbx")
 animation = &"new_animation"
+
+[node name="whoosh" type="AudioStreamPlayer" parent="." unique_id=1347510249]
+stream = ExtResource("3_i3pqv")

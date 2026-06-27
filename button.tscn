@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8gauijgkbi6n" path="res://button.gd" id="1_n4tde"]
 [ext_resource type="Texture2D" uid="uid://3ld5epqpq8ab" path="res://assets/Button (1).png" id="2_n4tde"]
+[ext_resource type="AudioStream" uid="uid://bsbenvgvfg7hm" path="res://assets/button.wav" id="3_vxja4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04n3"]
 size = Vector2(24, 24)
@@ -16,6 +17,10 @@ shape = SubResource("RectangleShape2D_r04n3")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=443798422]
 scale = Vector2(2, 2)
 texture = ExtResource("2_n4tde")
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=161408598]
+stream = ExtResource("3_vxja4")
+volume_db = 0.912
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

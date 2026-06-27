@@ -8,6 +8,7 @@ var was_falling = false
 
 func _physics_process(delta: float) -> void:
 	var falling = not is_on_floor()
+	
 	if falling:
 		if level:
 			level.set_box_falling(true)

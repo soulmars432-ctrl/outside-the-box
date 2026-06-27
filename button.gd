@@ -2,6 +2,7 @@ extends Area2D
 
 
 @export var door:StaticBody2D
+@onready var click: AudioStreamPlayer = $click
 
 
 
@@ -11,6 +12,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("chars"):
 		char_count += 1
 		if char_count == 1:
+			click.play()
 			door.open()
 
 func _on_body_exited(body: Node) -> void:

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Outside_the_Box"
+config/name="Gyration"
 run/main_scene="uid://c12fjk3jdp88y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

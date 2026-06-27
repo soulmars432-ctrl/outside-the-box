@@ -1,4 +1,5 @@
 extends Node2D
+@onready var creeking_sound: AudioStreamPlayer = $"../creeking_sound"
 
 @onready var progress_bar: ProgressBar = $"../ProgressBar"
 @onready var timer = get_tree().create_timer(0.75)
@@ -33,11 +34,13 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_left"):
 			
 			tween.tween_property(self, "rotation_degrees", rotation_degrees-90, 0.75)
+			creeking_sound.play()
 			tween.play()
 			timer = get_tree().create_timer(cooldown)
 		if Input.is_action_just_pressed("ui_right"):
 			
 			tween.tween_property(self, "rotation_degrees", rotation_degrees+90, 0.75)
+			creeking_sound.play()
 			tween.play()
 			timer = get_tree().create_timer(cooldown)
 	

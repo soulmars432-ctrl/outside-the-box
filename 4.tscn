@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cv47100gc1b0q" path="res://door.tscn" id="7_5fc0k"]
 [ext_resource type="Texture2D" uid="uid://db1je3lm2bucm" path="res://assets/tutorial3.png" id="8_qy8ru"]
 [ext_resource type="Texture2D" uid="uid://co32bbxg16rgu" path="res://assets/icons/sprite_1.png" id="10_113jv"]
+[ext_resource type="AudioStream" uid="uid://cfvj2sjmdjwim" path="res://assets/rotate sound.wav" id="12_vxrav"]
+[ext_resource type="AudioStream" uid="uid://bhr0d8pl57uji" path="res://assets/reset_sound.wav" id="13_5fc0k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1r778"]
 texture = ExtResource("6_vxrav")
@@ -144,5 +146,11 @@ offset_left = 1034.0
 offset_top = 36.00003
 offset_right = 1058.0
 offset_bottom = 60.00003
+
+[node name="creeking_sound" type="AudioStreamPlayer" parent="." unique_id=1203459531]
+stream = ExtResource("12_vxrav")
+
+[node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=94014237]
+stream = ExtResource("13_5fc0k")
 
 [editable path="Level/player"]

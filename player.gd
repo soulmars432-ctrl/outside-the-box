@@ -4,6 +4,7 @@ const SPEED = 1700.0
 
 # Direction the character is currently sliding in
 var slide_direction: Vector2 = Vector2.ZERO
+@onready var whoosh: AudioStreamPlayer = $whoosh
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var level: Node2D = $".."
@@ -30,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
 		if input != Vector2.ZERO:
 			slide_direction = input
+			whoosh.play()
 			is_sliding = true
 			
 	if is_sliding:

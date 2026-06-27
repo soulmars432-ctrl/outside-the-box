@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbvvjarw34q4j" path="res://goal.gd" id="1_0qle8"]
 [ext_resource type="Texture2D" uid="uid://b1acflb5csebo" path="res://assets/goal.png" id="2_0qle8"]
+[ext_resource type="AudioStream" uid="uid://bq0ejo43i12yc" path="res://assets/levelcomplete.wav" id="3_p20yd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qle8"]
 size = Vector2(64, 64)
@@ -16,5 +17,8 @@ texture = ExtResource("2_0qle8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=101348301]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_0qle8")
+
+[node name="next" type="AudioStreamPlayer" parent="." unique_id=1804372669]
+stream = ExtResource("3_p20yd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
