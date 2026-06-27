@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b73v30kl6rtw"]
 
 [ext_resource type="Script" uid="uid://bbvvjarw34q4j" path="res://goal.gd" id="1_0qle8"]
-[ext_resource type="Texture2D" uid="uid://4r8krxewwk61" path="res://New Piskel.png" id="1_6k3qi"]
+[ext_resource type="Texture2D" uid="uid://b1acflb5csebo" path="res://assets/goal.png" id="2_0qle8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qle8"]
 size = Vector2(64, 64)
@@ -10,11 +10,11 @@ size = Vector2(64, 64)
 script = ExtResource("1_0qle8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1988164448]
-scale = Vector2(2, 2)
-texture = ExtResource("1_6k3qi")
+scale = Vector2(4, 4)
+texture = ExtResource("2_0qle8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=101348301]
-position = Vector2(-8, -4)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_0qle8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

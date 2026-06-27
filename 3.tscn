@@ -1,12 +1,15 @@
-[gd_scene format=4 uid="uid://c4mj0uws6dhs"]
+[gd_scene format=4 uid="uid://bi34mtqsuurf6"]
 
 [ext_resource type="Script" uid="uid://d2b3eynsy4i8r" path="res://level.gd" id="1_c3c61"]
+[ext_resource type="PackedScene" uid="uid://bso6va85ujjyl" path="res://button.tscn" id="2_e5jh0"]
+[ext_resource type="PackedScene" uid="uid://cv47100gc1b0q" path="res://door.tscn" id="3_5mfaa"]
 [ext_resource type="PackedScene" uid="uid://dw0jslvmikcd6" path="res://box.tscn" id="5_7eokq"]
 [ext_resource type="PackedScene" uid="uid://bn06itk8icyda" path="res://player.tscn" id="6_qdt5h"]
 [ext_resource type="PackedScene" uid="uid://b73v30kl6rtw" path="res://goal.tscn" id="7_1qnog"]
 [ext_resource type="Texture2D" uid="uid://de8p4gnbvb4un" path="res://assets/Wall assets/monochrome_tilemap_packed (1).png" id="7_c3c61"]
+[ext_resource type="Texture2D" uid="uid://db1je3lm2bucm" path="res://assets/tutorial3.png" id="8_yrvgx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_133ip"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3c61"]
 texture = ExtResource("7_c3c61")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -29,9 +32,9 @@ texture = ExtResource("7_c3c61")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_pxfmd"]
+[sub_resource type="TileSet" id="TileSet_5mfaa"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_133ip")
+sources/1 = SubResource("TileSetAtlasSource_c3c61")
 
 [node name="Node2D" type="Node2D" unique_id=6914331]
 
@@ -39,31 +42,39 @@ sources/1 = SubResource("TileSetAtlasSource_133ip")
 position = Vector2(576, 320)
 script = ExtResource("1_c3c61")
 
+[node name="button" parent="Level" unique_id=1820447235 node_paths=PackedStringArray("door") instance=ExtResource("2_e5jh0")]
+position = Vector2(-224, 32)
+door = NodePath("../door")
+
 [node name="box" parent="Level" unique_id=405040134 instance=ExtResource("5_7eokq")]
-position = Vector2(224, -224)
+position = Vector2(224, -32)
 
 [node name="player" parent="Level" unique_id=105112366 instance=ExtResource("6_qdt5h")]
 position = Vector2(-224, -224)
 
 [node name="goal" parent="Level" unique_id=1607375825 instance=ExtResource("7_1qnog")]
-position = Vector2(32, 160)
-next_level = "res://3.tscn"
+position = Vector2(224, 224)
+next_level = "res://4.tscn"
 
-[node name="wall" type="TileMapLayer" parent="Level" unique_id=345898319]
+[node name="wall" type="TileMapLayer" parent="Level" unique_id=1283734445]
 position = Vector2(-448, -320)
-scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAADAAAAAQABAAIAAAAHAAAAAQABAAIAAAAIAAAAAQABAAIAAAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAEAAQAAAAEAAAALAAIAAQAAAAEAAAALAAMAAQAAAAEAAAALAAQAAQAAAAEAAAALAAgAAQAAAAEAAAAGAAkAAQABAAAAAAAJAAkAAQABAAAAAAAKAAkAAQABAAAAAAACAAEAAQACAAEAAAACAAIAAQACAAEAAAACAAMAAQACAAEAAAACAAQAAQACAAEAAAACAAUAAQACAAEAAAACAAYAAQACAAEAAAACAAcAAQACAAEAAAAGAAAAAQABAAIAAAALAAUAAQAAAAEAAAALAAYAAQAAAAEAAAALAAcAAQAAAAEAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAEAAkAAQABAAAAAAAFAAkAAQABAAAAAAACAAgAAQACAAEAAAADAAkAAQABAAAAAAAIAAkAAQABAAAAAAAHAAkAAQABAAAAAAAKAAIAAQADAAMAAAA=")
-tile_set = SubResource("TileSet_pxfmd")
+scale = Vector2(4.02, 4.02)
+tile_map_data = PackedByteArray("AAADAAAAAQABAAIAAAAHAAAAAQABAAIAAAAIAAAAAQABAAIAAAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAEAAQAAAAEAAAALAAIAAQAAAAEAAAALAAMAAQAAAAEAAAALAAQAAQAAAAEAAAALAAgAAQAAAAEAAAADAAkAAQABAAAAAAAGAAkAAQABAAAAAAAHAAkAAQABAAAAAAAIAAkAAQABAAAAAAAJAAkAAQABAAAAAAAKAAkAAQABAAAAAAAEAAEAAQAAAAEAAAAEAAIAAQAAAAEAAAAFAAIAAQACAAEAAAAFAAEAAQACAAEAAAAEAAgAAQAAAAEAAAAEAAcAAQAAAAEAAAAEAAYAAQAAAAAAAAAFAAYAAQACAAAAAAAFAAgAAQACAAEAAAAFAAcAAQACAAEAAAAIAAYAAQAAAAAAAAAJAAYAAQABAAAAAAAJAAcAAQABAAIAAAAKAAcAAQABAAIAAAAEAAMAAQAAAAIAAAAFAAMAAQACAAIAAAACAAEAAQACAAEAAAACAAIAAQACAAEAAAACAAMAAQACAAEAAAACAAQAAQACAAEAAAACAAUAAQACAAEAAAACAAYAAQACAAEAAAACAAcAAQACAAEAAAACAAgAAQACAAEAAAAGAAAAAQABAAIAAAAIAAcAAQAAAAIAAAAKAAUAAQAAAAAAAAAJAAQAAQACAAIAAAAHAAQAAQAAAAIAAAAIAAQAAQABAAIAAAAJAAMAAQACAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_5mfaa")
 
-[node name="wall2" type="TileMapLayer" parent="Level" unique_id=588965666]
-position = Vector2(-456, -328)
-scale = Vector2(4.067, 4.067)
-tile_map_data = PackedByteArray("AAAHAAgAAQABAAAAAAAGAAgAAQAAAAAAAAAIAAgAAQACAAAAAAAGAAYAAQAAAAIAAAAHAAYAAQABAAIAAAAIAAYAAQACAAIAAAAGAAUAAQAAAAAAAAAHAAUAAQABAAAAAAAIAAUAAQACAAAAAAA=")
-tile_set = SubResource("TileSet_pxfmd")
-
-[node name="Camera2D" type="Camera2D" parent="Level" unique_id=2009813200]
+[node name="Camera2D" type="Camera2D" parent="Level" unique_id=98535440]
 position = Vector2(0, -8)
 zoom = Vector2(0.65, 0.65)
+
+[node name="door" parent="Level" unique_id=667392617 instance=ExtResource("3_5mfaa")]
+position = Vector2(96, 224)
+
+[node name="Tutorial3" type="Sprite2D" parent="Level" unique_id=695839352]
+modulate = Color(1, 1, 1, 0.078431375)
+position = Vector2(-388, 132)
+rotation = -0.42047185
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("8_yrvgx")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=34048882]
 offset_left = 32.0

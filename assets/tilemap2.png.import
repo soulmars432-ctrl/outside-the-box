@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy2vu8k51f2fu"
-path="res://.godot/imported/Boulder.png-99785ffda38270541b255214eb53cee3.ctex"
+uid="uid://cgdpi2u87o8le"
+path="res://.godot/imported/tilemap2.png-9892e451bf230ab6a8af554e5fdd0502.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wall assets/Boulder.png"
-dest_files=["res://.godot/imported/Boulder.png-99785ffda38270541b255214eb53cee3.ctex"]
+source_file="res://assets/tilemap2.png"
+dest_files=["res://.godot/imported/tilemap2.png-9892e451bf230ab6a8af554e5fdd0502.ctex"]
 
 [params]
 

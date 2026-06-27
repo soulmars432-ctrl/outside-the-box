@@ -6,13 +6,19 @@ extends Node2D
 @onready var player: CharacterBody2D = $player
 @onready var goal: Area2D = $goal
 
-
 var cooldown = 1.0
+var boxes_falling: int = 0
+
+func set_box_falling(active: bool) -> void:
+	if active:
+		boxes_falling += 1
+	else:
+		boxes_falling = max(0, boxes_falling - 1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if player.is_sliding:
+	if player.is_sliding or !boxes_falling == 0:
 		progress_bar.value = 0.75
 	else:
 		progress_bar.value = timer.time_left
@@ -20,7 +26,7 @@ func _process(delta: float) -> void:
 		player.in_rotation = false
 	else:
 		player.in_rotation = true
-	if timer.time_left == 0 and !player.is_sliding:
+	if timer.time_left == 0 and !player.is_sliding and boxes_falling == 0:
 		
 		var tween = get_tree().create_tween()
 		tween.stop()

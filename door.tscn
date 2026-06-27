@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cv47100gc1b0q"]
 
 [ext_resource type="Script" uid="uid://bl4ywv7or0j0f" path="res://door.gd" id="1_0phs7"]
-[ext_resource type="Texture2D" uid="uid://jfmfbr2nrsch" path="res://assets/Door/sprite_0.png" id="1_v6xrn"]
-[ext_resource type="Texture2D" uid="uid://bm3crsy8youmx" path="res://assets/Door/sprite_1.png" id="2_0phs7"]
+[ext_resource type="Texture2D" uid="uid://bitis5cmq1lul" path="res://assets/door.png" id="2_0phs7"]
+[ext_resource type="Texture2D" uid="uid://7fwfgomepln2" path="res://assets/door (1).png" id="3_50cdl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_50cdl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_v6xrn")
+"texture": ExtResource("2_0phs7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_0phs7")
+"texture": ExtResource("3_50cdl")
 }],
 "loop": true,
 "name": &"door",
@@ -21,11 +21,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5njw"]
 size = Vector2(32, 32)
 
-[node name="door" type="CharacterBody2D" unique_id=81660422]
+[node name="door" type="StaticBody2D" unique_id=667392617]
 scale = Vector2(2, 2)
+disable_mode = 1
 script = ExtResource("1_0phs7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604997146]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_50cdl")
 animation = &"door"
 frame_progress = 0.9221044

@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://5t2hemke8617"]
+
+[ext_resource type="Texture2D" uid="uid://de8p4gnbvb4un" path="res://assets/Wall assets/monochrome_tilemap_packed (1).png" id="1_qtu10"]
+[ext_resource type="Texture2D" uid="uid://cgdpi2u87o8le" path="res://assets/tilemap2.png" id="2_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://redads3ckoqc" path="res://assets/level select.png" id="3_kbped"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj5cn"]
+texture = ExtResource("1_qtu10")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iy58a"]
+texture = ExtResource("2_ee4bf")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_6a6wx"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_fj5cn")
+sources/2 = SubResource("TileSetAtlasSource_iy58a")
+
+[node name="Control" type="Control" unique_id=992979853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="wall" type="TileMapLayer" parent="." unique_id=670969800]
+position = Vector2(-416, -248)
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAD//wMAAQAAAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAIAAAADAAMAAQABAAIAAAAEAAMAAQABAAIAAAAFAAMAAQABAAIAAAAGAAMAAQABAAIAAAAHAAMAAQABAAIAAAAIAAMAAQABAAIAAAAJAAMAAQABAAIAAAAKAAMAAQABAAIAAAALAAMAAQABAAIAAAAMAAMAAQABAAIAAAANAAMAAQABAAIAAAAOAAMAAQABAAIAAAAPAAMAAQABAAIAAAAQAAMAAQACAAIAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAAQAP//AQACAAEAAAAQAAAAAQACAAEAAAAQAAEAAQACAAEAAAAQAAIAAQACAAEAAAD/////AQAAAAEAAAD//wgAAQAAAAEAAAD//wkAAQAAAAEAAAAQAAgAAQACAAEAAAAQAAkAAQACAAEAAAD//wYAAQAAAAAAAAD//wcAAQAAAAEAAAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAEAAYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAALAAYAAQABAAAAAAAMAAYAAQABAAAAAAANAAYAAQABAAAAAAAOAAYAAQABAAAAAAAPAAYAAQABAAAAAAAQAAYAAQACAAAAAAAQAAcAAQACAAEAAAA=")
+tile_set = SubResource("TileSet_6a6wx")
+
+[node name="LevelSelect" type="Sprite2D" parent="." unique_id=603661501]
+position = Vector2(576, 96)
+scale = Vector2(2.40625, 2.75)
+texture = ExtResource("3_kbped")

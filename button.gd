@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@export var door:CharacterBody2D
+@export var door:StaticBody2D
 
 
 

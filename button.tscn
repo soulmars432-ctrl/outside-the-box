@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bso6va85ujjyl"]
 
 [ext_resource type="Script" uid="uid://b8gauijgkbi6n" path="res://button.gd" id="1_n4tde"]
-[ext_resource type="Texture2D" uid="uid://d3bago2ycyseq" path="res://Button.png" id="1_r04n3"]
+[ext_resource type="Texture2D" uid="uid://3ld5epqpq8ab" path="res://assets/Button (1).png" id="2_n4tde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04n3"]
 size = Vector2(24, 24)
@@ -14,7 +14,8 @@ script = ExtResource("1_n4tde")
 shape = SubResource("RectangleShape2D_r04n3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=443798422]
-texture = ExtResource("1_r04n3")
+scale = Vector2(2, 2)
+texture = ExtResource("2_n4tde")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

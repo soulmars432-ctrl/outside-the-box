@@ -1,0 +1,125 @@
+[gd_scene format=4 uid="uid://bxfv8yghso2lm"]
+
+[ext_resource type="Script" uid="uid://d2b3eynsy4i8r" path="res://level.gd" id="1_48hau"]
+[ext_resource type="PackedScene" uid="uid://bso6va85ujjyl" path="res://button.tscn" id="2_1r778"]
+[ext_resource type="PackedScene" uid="uid://dw0jslvmikcd6" path="res://box.tscn" id="3_113jv"]
+[ext_resource type="PackedScene" uid="uid://bn06itk8icyda" path="res://player.tscn" id="4_lwlv8"]
+[ext_resource type="PackedScene" uid="uid://b73v30kl6rtw" path="res://goal.tscn" id="5_ty73x"]
+[ext_resource type="Texture2D" uid="uid://de8p4gnbvb4un" path="res://assets/Wall assets/monochrome_tilemap_packed (1).png" id="6_vxrav"]
+[ext_resource type="Texture2D" uid="uid://cgdpi2u87o8le" path="res://assets/tilemap2.png" id="7_1r778"]
+[ext_resource type="PackedScene" uid="uid://cv47100gc1b0q" path="res://door.tscn" id="7_5fc0k"]
+[ext_resource type="Texture2D" uid="uid://db1je3lm2bucm" path="res://assets/tutorial3.png" id="8_qy8ru"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3c61"]
+texture = ExtResource("6_vxrav")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_113jv"]
+texture = ExtResource("7_1r778")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_5mfaa"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_c3c61")
+sources/2 = SubResource("TileSetAtlasSource_113jv")
+
+[node name="Node2D" type="Node2D" unique_id=6914331]
+
+[node name="Level" type="Node2D" parent="." unique_id=541424290]
+position = Vector2(576, 320)
+script = ExtResource("1_48hau")
+
+[node name="button2" parent="Level" unique_id=1820447235 node_paths=PackedStringArray("door") instance=ExtResource("2_1r778")]
+position = Vector2(-160, -224)
+door = NodePath("../door2")
+
+[node name="button3" parent="Level" unique_id=559575435 node_paths=PackedStringArray("door") instance=ExtResource("2_1r778")]
+position = Vector2(-32, 32)
+door = NodePath("../door2")
+
+[node name="button" parent="Level" unique_id=176774254 node_paths=PackedStringArray("door") instance=ExtResource("2_1r778")]
+modulate = Color(0.95434266, 0.6906012, 0.76320153, 1)
+position = Vector2(-224, 32)
+door = NodePath("../door")
+
+[node name="box" parent="Level" unique_id=405040134 instance=ExtResource("3_113jv")]
+position = Vector2(224, -224)
+
+[node name="player" parent="Level" unique_id=105112366 instance=ExtResource("4_lwlv8")]
+position = Vector2(232, 232)
+safe_margin = 2.0
+
+[node name="goal" parent="Level" unique_id=1607375825 instance=ExtResource("5_ty73x")]
+position = Vector2(-160, 224)
+next_level = "res://1.tscn"
+
+[node name="wall" type="TileMapLayer" parent="Level" unique_id=1283734445]
+position = Vector2(-448, -320)
+scale = Vector2(4.015, 4.015)
+tile_map_data = PackedByteArray("AAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAEAAQAAAAEAAAALAAIAAQAAAAEAAAALAAgAAQAAAAEAAAAJAAkAAQABAAAAAAAKAAkAAQABAAAAAAALAAcAAQAAAAEAAAAKAAIAAQADAAMAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAIAAAAFAAYAAQAAAAAAAAAGAAAAAQABAAIAAAAGAAMAAQABAAAAAAAHAAAAAQABAAIAAAAHAAMAAQABAAAAAAAHAAUAAQAAAAEAAAAIAAAAAQABAAIAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAADAAMAAQACAAEAAAADAAQAAQACAAIAAAADAAYAAQACAAAAAAADAAcAAQACAAEAAAADAAgAAQACAAEAAAAEAAkAAQABAAAAAAAFAAcAAQAAAAEAAAAFAAgAAQAAAAEAAAAGAAQAAQABAAIAAAAGAAYAAQABAAAAAAAIAAMAAQACAAAAAAAIAAQAAQACAAEAAAAIAAUAAQACAAEAAAAIAAYAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAEAAAACAAUAAQACAAEAAAALAAMAAQAAAAEAAAALAAQAAQAAAAEAAAALAAUAAQAAAAEAAAALAAYAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_5mfaa")
+
+[node name="Camera2D" type="Camera2D" parent="Level" unique_id=98535440]
+position = Vector2(0, -8)
+zoom = Vector2(0.65, 0.65)
+
+[node name="door" parent="Level" unique_id=667392617 instance=ExtResource("7_5fc0k")]
+modulate = Color(0.95434266, 0.6906012, 0.76320153, 1)
+position = Vector2(-159, 97)
+
+[node name="Tutorial3" type="Sprite2D" parent="Level" unique_id=695839352]
+modulate = Color(1, 1, 1, 0.078431375)
+position = Vector2(-388, 132)
+rotation = -0.42047185
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("8_qy8ru")
+
+[node name="door2" parent="Level" unique_id=1191553702 instance=ExtResource("7_5fc0k")]
+position = Vector2(-160, -96)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=34048882]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 88.0
+max_value = 0.75
+value = 0.35
+show_percentage = false
